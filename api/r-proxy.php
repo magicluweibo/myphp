@@ -52,6 +52,8 @@ if (isset($_GET['url']) && !empty($_GET['url'])) {
 	
 	
 	$output = zxCurl($exactly_url);
+	$output = str_replace("Warning: Undefined variable $headers in /var/task/user/api/r-proxy.php on line 130", '', $output);
+	
 	if (strstr($output, "EXTM3U")) {
         $m3u8s = explode("\n", $output);
         $output = '';
