@@ -53,7 +53,6 @@ if (isset($_GET['url']) && !empty($_GET['url'])) {
 	
 	$output = zxCurl($exactly_url);
 	
-	
 	if (strstr($output, "EXTM3U")) {
         $m3u8s = explode("\n", $output);
         $output = '';
@@ -129,13 +128,11 @@ function get_php_url(){  //获取php实时准确url
 
 function get_RESOLUTION($url){
 	
-	if ($headers === null) {
-        $headers = ['User-Agent: Mozilla/5.0 (QtEmbedded; U; Linux; C) AppleWebKit/533.3 (KHTML, like Gecko) MAG200 stbapp ver: 2 rev: 250 Safari/533.3'];
-    }
+	
 	$ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    
     curl_setopt($ch, CURLOPT_TIMEOUT, 10);
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
@@ -162,13 +159,11 @@ function get_RESOLUTION($url){
 
 function zxCurl($url, $headers = null)
 {
-    if ($headers === null) {
-        $headers = ['User-Agent: Mozilla/5.0 (QtEmbedded; U; Linux; C) AppleWebKit/533.3 (KHTML, like Gecko) MAG200 stbapp ver: 2 rev: 250 Safari/533.3'];
-    }
+    
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    
     curl_setopt($ch, CURLOPT_TIMEOUT, 100);
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
