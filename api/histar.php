@@ -1,6 +1,6 @@
 <?php
 $url = base64_decode($_GET['url']);
-$ts = $_GET['ts'];
+$ts = $_GET['ts'] ?? '';
 if ($url)
 	get_data($url);
 if ($ts)
