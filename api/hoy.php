@@ -17,7 +17,7 @@ $output = curl_exec($ch);
 curl_close($ch);
 header("Content-Type: application/x-mpegurl");
 
-$output = str_replace("index-fhd", "index.php?id=".$id."&flv=index-fhd", $output); 
+$output = str_replace("index-fhd", "hoy.php?id=".$id."&flv=index-fhd", $output); 
 
 echo $output;
 ?>
