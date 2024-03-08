@@ -2,14 +2,17 @@
 	$id = $_GET['id'] ?? null;
 $ts = $_GET['ts'] ?? null;
 	
-    if ($id)
-	$php_url = get_php_url();
+if ($id) {
+    $php_url = get_php_url();
 
-	$url = 'http://127.0.0.1:35455/youtube/'.$id.'';
-	$redirect_url = get_redirect_url($url);
-	$response = get_data($redirect_url,$php_url);
-if ($ts)
+    $url = 'http://43.224.33.165:35455/youtube/'.$id.'';
+    $redirect_url = get_redirect_url($url);
+    $response = get_data($redirect_url,$php_url);
+}
+
+if ($ts) {
     get_ts($ts);
+}
 
 
 
